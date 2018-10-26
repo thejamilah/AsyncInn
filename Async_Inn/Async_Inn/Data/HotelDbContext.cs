@@ -17,5 +17,14 @@ namespace Async_Inn.Data
 
         public DbSet<Hotel> Hotel { get; set; }
 
+        public DbSet<HotelRooms> HotelRooms { get; set; }
+
+        public DbSet<Room> Rooms { get; set; }
+
+        public DbSet<RoomAmenities> RoomAmenities { get; set; }
+
+        public DbSet<Amenities> Amenities { get; set; }
+
+
     }
 }
