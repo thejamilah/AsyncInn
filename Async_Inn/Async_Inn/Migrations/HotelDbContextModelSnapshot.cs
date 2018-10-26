@@ -67,9 +67,7 @@ namespace Async_Inn.Migrations
 
                     b.Property<bool>("PetFriendly");
 
-                    b.Property<decimal>("RoomID");
-
-                    b.Property<int?>("RoomID1");
+                    b.Property<int>("RoomID");
 
                     b.Property<string>("RoomName");
 
@@ -77,7 +75,7 @@ namespace Async_Inn.Migrations
 
                     b.HasKey("HotelID", "RoomNumber");
 
-                    b.HasIndex("RoomID1");
+                    b.HasIndex("RoomID");
 
                     b.ToTable("HotelRooms");
                 });
@@ -130,7 +128,8 @@ namespace Async_Inn.Migrations
 
                     b.HasOne("Async_Inn.Models.Room", "Room")
                         .WithMany("HotelRoom")
-                        .HasForeignKey("RoomID1");
+                        .HasForeignKey("RoomID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Async_Inn.Models.Room", b =>
