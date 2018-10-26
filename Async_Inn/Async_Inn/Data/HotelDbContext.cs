@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Async_Inn.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,8 @@ namespace Async_Inn.Data
         {
 
         }
+
+        public DbSet<Hotel> Hotel { get; set; }
+
     }
 }
