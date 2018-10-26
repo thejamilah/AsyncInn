@@ -5,10 +5,13 @@ using System.Threading.Tasks;
 
 namespace Async_Inn.Models
 {
-    public class Amenities
+    public class Amenity
     {
         public int ID { get; set; }
 
         public string Name { get; set; }
+
+        //navigation properties
+        public RoomAmenity RoomAmenities { get; set; }
     }
 }

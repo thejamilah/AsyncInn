@@ -18,5 +18,9 @@ namespace Async_Inn.Models
         public string State { get; set; }
 
         public int Zip { get; set; }
+
+        //navigation properties
+
+        public ICollection<HotelRoom> HotelRooms { get; set; }
     }
 }

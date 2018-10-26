@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Async_Inn.Models
 {
-    public class HotelRooms
+    public class HotelRoom
     {
-        public int ID { get; set; }
+        public int HotelID { get; set; }
 
         public int RoomNumber { get; set; }
 
@@ -18,6 +18,10 @@ namespace Async_Inn.Models
         public decimal RoomRate { get; set; }
 
         public bool PetFriendly { get; set; }
+
+        //navigation properties
+        public Hotel Hotel { get; set; }
+        public Room Room { get; set; }
 
     }
 }

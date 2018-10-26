@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace Async_Inn.Models
 {
-    public class RoomAmenities
+    public class RoomAmenity
     {
-        [Key]
-
+        
         public int AmenitiesID { get; set; }
 
         public int RoomID { get; set; }
+
+        //navigation properties
+        public ICollection<Amenity> Amenities { get; set; }
+
+        public ICollection<Room> Room { get; set; }
     }
 }

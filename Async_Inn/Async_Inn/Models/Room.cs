@@ -13,6 +13,11 @@ namespace Async_Inn.Models
 
         public Layout Layout { get; set; }
 
+        //navigation properties
+        public ICollection<HotelRoom> HotelRoom { get; set; }
+
+        public RoomAmenity RoomAmenity { get; set; }
+
     }
 
     public enum Layout
