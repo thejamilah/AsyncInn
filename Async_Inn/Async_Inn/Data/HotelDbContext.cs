@@ -12,7 +12,12 @@ namespace Async_Inn.Data
         public HotelDbContext(DbContextOptions<HotelDbContext> options) : base
             (options)
         {
+            
+        }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Hotel> Hotel { get; set; }
