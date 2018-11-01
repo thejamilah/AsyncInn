@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Async_Inn.Models
 {
     public class Room
     {
         public int ID { get; set; }
-
+        [Required]
         public string Name { get; set; }
-
+        [Required]
+        [EnumDataType(typeof(Layout))]
         public Layout Layout { get; set; }
 
         //navigation properties
@@ -22,8 +21,11 @@ namespace Async_Inn.Models
 
     public enum Layout
     {
+        [Display(Name = "Studio")]
         Studio,
+        [Display(Name = "One Bedroom")]
         OneBedroom,
+        [Display(Name = "Two Bedroom")]
         TwoBedroom,
     }
 
