@@ -23,7 +23,7 @@ namespace Async_Inn.Models
         [StringLength(2, ErrorMessage = "Maximum Character Length 2")]
         public string State { get; set; }
         [Required]
-        [Range(00000,99999, ErrorMessage ="Max Zip Code Length 5")]
+        [Range(5,5, ErrorMessage ="Max Zip Code Length 5")]
         public int Zip { get; set; }
 
         //navigation properties
