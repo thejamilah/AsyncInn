@@ -26,7 +26,6 @@ namespace Async_Inn.Data
     );
  
         }
-
         
         public DbSet<Hotel> Hotel { get; set; }
 
@@ -37,7 +36,6 @@ namespace Async_Inn.Data
         public DbSet<RoomAmenity> RoomAmenities { get; set; }
 
         public DbSet<Amenity> Amenities { get; set; }
-
 
     }
 }
