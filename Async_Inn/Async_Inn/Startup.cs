@@ -17,6 +17,7 @@ namespace Async_Inn
     {
         public IConfiguration Configuration { get; }
         
+        //This is the dependency injection
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
