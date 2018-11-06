@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Async_Inn.Models
 {
@@ -10,6 +11,6 @@ namespace Async_Inn.Models
         public string Name { get; set; }
 
         //navigation properties
-        public RoomAmenity RoomAmenities { get; set; }
+        public ICollection<RoomAmenity> RoomAmenities { get; set; }
     }
 }

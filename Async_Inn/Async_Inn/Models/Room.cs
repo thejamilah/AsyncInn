@@ -9,6 +9,7 @@ namespace Async_Inn.Models
         [Required]
         public string Name { get; set; }
         [Required]
+        [Display(Name = "Layout Type")]
         [EnumDataType(typeof(Layout))]
         public Layout Layout { get; set; }
 
