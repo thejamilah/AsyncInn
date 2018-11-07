@@ -107,7 +107,7 @@ namespace Async_Inn.Data
                 new Room
                 {
                     ID = 6,
-                    Name = "Seattle Sklyline",
+                    Name = "Seattle Skyline",
                     Layout = Layout.OneBedroom,
                 }
                 );

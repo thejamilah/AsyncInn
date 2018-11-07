@@ -11,6 +11,6 @@ namespace Async_Inn.Models
         public string Name { get; set; }
 
         //navigation properties
-        public ICollection<RoomAmenity> RoomAmenities { get; set; }
+        public RoomAmenity RoomAmenity { get; set; }
     }
 }
