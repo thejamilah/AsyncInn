@@ -22,6 +22,7 @@ namespace Async_Inn.Controllers
         // GET: Amenities
         public async Task<IActionResult> Index()
         {
+            var HotelDBContext = _context.Amenities.Include(a => a.RoomAmenity).Include(r => r.RoomAmenity);
             return View(await _context.Amenities.ToListAsync());
         }
 
