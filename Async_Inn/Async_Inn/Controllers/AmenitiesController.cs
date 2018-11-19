@@ -151,3 +151,5 @@ namespace Async_Inn.Controllers
         }
     }
 }
+
+//Dependency Injections
