@@ -1,5 +1,4 @@
-# Lab 13
-## .NET C# Educational Lab Assignment - The Async Inn
+# Lab 13## .NET C# Educational Lab Assignment - The Async Inn
 
 ## Intro to Entity Framework
 This is an educational assignment that focuses on Intro to Entity Framework by building a database for a sample problem domain of a hotel.</br>
