@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Async_Inn.Models.Services
 {
-   public class HotelService : IHotel
+    public class HotelService : IHotel
     {
         private HotelDbContext _context;
 
@@ -17,22 +17,25 @@ namespace Async_Inn.Models.Services
 
         public async Task CreateHotel(Hotel hotel)
         {
-            throw new System.NotImplementedException();
+            _context.Hotel.Add(hotel);
+            await _context.SaveChangesAsync();
         }
 
         public async Task DeleteHotel(int ID)
         {
-            throw new System.NotImplementedException();
+            Hotel hotel = await GetHotel(ID);
+            _context.Hotel.Remove(hotel);
+            await _context.SaveChangesAsync();
         }
 
-        public async Task <Hotel> GetHotel(int? ID)
+        public async Task<Hotel> GetHotel(int? ID)
         {
             return await _context.Hotel.FirstOrDefaultAsync(x => x.ID == ID);
         }
 
         public async Task<IEnumerable<Hotel>> GetHotels()
         {
-            return await _context.Hotel.ToListAsync();
+            return await _context.Hotel.ToArrayAsync();
         }
 
         public async Task UpdateHotel(Hotel hotel)

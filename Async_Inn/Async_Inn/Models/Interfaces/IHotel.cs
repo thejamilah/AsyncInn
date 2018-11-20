@@ -7,7 +7,7 @@ namespace Async_Inn.Models.Interfaces
 {
     public interface IHotel
     {
-        Task<List<Hotel>> GetHotel(int? ID);
+        Task<Hotel> GetHotel(int? ID);
 
         Task<IEnumerable<Hotel>> GetHotels();
 
