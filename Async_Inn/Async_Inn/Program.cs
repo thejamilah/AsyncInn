@@ -22,4 +22,3 @@ namespace Async_Inn
                 .UseStartup<Startup>();
     }
 }
-//AsynInn
