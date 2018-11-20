@@ -10,7 +10,8 @@ namespace Async_Inn.Models.Services
 {
     public class AmenityService : IAmenity
     {
-        private HotelDBContext _context;
+         
+        private HotelDbContext _context;
 
         public AmenityService(HotelDbContext context)
         {
@@ -23,24 +24,28 @@ namespace Async_Inn.Models.Services
             await _context.SaveChangesAsync();
         }
 
-        public Task DeleteAmenity(int ID)
+        public async Task DeleteAmenity(int ID)
         {
-            throw new NotImplementedException();
+            Amenity amenity = await GetAmenity(ID);
+            _context.Amenities.Remove(amenity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<List<Amenity>> GetAmenities()
+        public async Task<List<Amenity>> GetAmenities()
         {
-            throw new NotImplementedException();
+            return await _context.Amenities.ToListAsync();
         }
 
-        public Task<Amenity> GetAmenity(int? ID)
+        public async Task<Amenity> GetAmenity(int? ID)
         {
-            throw new NotImplementedException();
+            return await _context.Amenities.FirstOrDefaultAsync(x => x.ID == ID);
         }
 
-        public Task UpdateAmenity(Amenity amenity)
+        public async Task UpdateAmenity(Amenity amenity)
         {
-            throw new NotImplementedException();
+            _context.Amenities.Update(amenity);
+            await _context.SaveChangesAsync();
         }
     }
+
 }

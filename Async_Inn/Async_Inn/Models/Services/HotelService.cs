@@ -1,36 +1,44 @@
-﻿using Async_Inn.Models.Interfaces;
-using System;
+﻿using Async_Inn.Data;
+using Async_Inn.Models.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Async_Inn.Models.Services
 {
-    public class HotelService : IHotel
+   public class HotelService : IHotel
     {
-        public Task CreateHotel(Hotel hotel)
+        private HotelDbContext _context;
+
+        public HotelService(HotelDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task DeleteHotel(int ID)
+        public async Task CreateHotel(Hotel hotel)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
-        public Task<List<Hotel>> GetHotel(int? ID)
+        public async Task DeleteHotel(int ID)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
-        public Task<IEnumerable<Hotel>> GetHotels()
+        public async Task <Hotel> GetHotel(int? ID)
         {
-            throw new NotImplementedException();
+            return await _context.Hotel.FirstOrDefaultAsync(x => x.ID == ID);
         }
 
-        public Task UpdateHotel(Hotel hotel)
+        public async Task<IEnumerable<Hotel>> GetHotels()
         {
-            throw new NotImplementedException();
+            return await _context.Hotel.ToListAsync();
+        }
+
+        public async Task UpdateHotel(Hotel hotel)
+        {
+            _context.Hotel.Update(hotel);
+            await _context.SaveChangesAsync();
         }
     }
 }
