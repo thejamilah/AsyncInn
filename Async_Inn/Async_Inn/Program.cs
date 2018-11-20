@@ -7,7 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-
+//Dependency Injection
 namespace Async_Inn
 {
     public class Program
@@ -22,4 +22,3 @@ namespace Async_Inn
                 .UseStartup<Startup>();
     }
 }
-//AsynInn

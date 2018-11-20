@@ -4,6 +4,7 @@ namespace Async_Inn.Models
 {
     public class HotelRoom
     {
+        [Display(Name = "Hotel Property Name")]
         public int HotelID { get; set; }
         [Required]
         [Display(Name = "Room Number")]
