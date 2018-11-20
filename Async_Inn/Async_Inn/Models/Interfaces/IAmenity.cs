@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace Async_Inn.Models.Interfaces
 {
+
     interface IAmenity
     {
         Task CreateAmenity(Amenity amenity);
@@ -16,7 +17,6 @@ namespace Async_Inn.Models.Interfaces
         Task<List<Amenity>> GetAmenities();
 
         Task<Amenity> GetAmenity(int? ID);
-
 
     }
 }

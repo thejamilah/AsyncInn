@@ -19,6 +19,7 @@ namespace Async_Inn
     {
         public IConfiguration Configuration { get; }
         
+        //This is the dependency injection
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -32,7 +33,7 @@ namespace Async_Inn
 
             services.AddDbContext<HotelDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("AzureConnection"));
             });
 
             services.AddTransient<IAmenity, AmenityService>();

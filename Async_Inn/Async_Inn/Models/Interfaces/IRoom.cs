@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace Async_Inn.Models.Interfaces
 {
+
     interface IRoom
     {
 
@@ -21,7 +22,6 @@ namespace Async_Inn.Models.Interfaces
 
         //Delete
         Task DeleteRoom(int ID);
-
 
     }
 }

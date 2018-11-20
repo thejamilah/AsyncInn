@@ -1,4 +1,4 @@
-﻿using Async_Inn.Models;
+using Async_Inn.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
