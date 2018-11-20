@@ -4,14 +4,16 @@ using Async_Inn.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Async_Inn.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    partial class HotelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181107033556_initnavs")]
+    partial class initnavs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -134,7 +136,7 @@ namespace Async_Inn.Migrations
                         new { ID = 3, Layout = 1, Name = "Mesopotamia Suite" },
                         new { ID = 4, Layout = 0, Name = "The Four OOPs" },
                         new { ID = 5, Layout = 2, Name = "All Property Behaviors" },
-                        new { ID = 6, Layout = 1, Name = "Seattle Skyline" }
+                        new { ID = 6, Layout = 1, Name = "Seattle Sklyline" }
                     );
                 });
 

@@ -4,14 +4,16 @@ using Async_Inn.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Async_Inn.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    partial class HotelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181106040439_firsthotl")]
+    partial class firsthotl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,23 +31,15 @@ namespace Async_Inn.Migrations
                         .IsRequired()
                         .HasMaxLength(25);
 
-                    b.Property<int?>("RoomAmenityAmenitiesID");
+                    b.Property<int?>("RoomAmenitiesAmenitiesID");
 
-                    b.Property<int?>("RoomAmenityRoomID");
+                    b.Property<int?>("RoomAmenitiesRoomID");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("RoomAmenityAmenitiesID", "RoomAmenityRoomID");
+                    b.HasIndex("RoomAmenitiesAmenitiesID", "RoomAmenitiesRoomID");
 
                     b.ToTable("Amenities");
-
-                    b.HasData(
-                        new { ID = 1, Name = "Coffee Maker" },
-                        new { ID = 2, Name = "Tea Maker" },
-                        new { ID = 3, Name = "Craft Cocktail Mini Bar" },
-                        new { ID = 4, Name = "Free WiFi" },
-                        new { ID = 5, Name = "Fog Free Mirror" }
-                    );
                 });
 
             modelBuilder.Entity("Async_Inn.Models.Hotel", b =>
@@ -77,11 +71,7 @@ namespace Async_Inn.Migrations
                     b.ToTable("Hotel");
 
                     b.HasData(
-                        new { ID = 1, Address = "2901 3rd Ave #300", City = "Seattle", HotelName = "Async Inn", State = "WA", Zip = 98121 },
-                        new { ID = 2, Address = "123 Elm Street", City = "Nightmare", HotelName = "Hotel Babylon", State = "WA", Zip = 98121 },
-                        new { ID = 3, Address = "1000 Shenanigans Lane", City = "Seattle", HotelName = "Polymorphism Manor", State = "WA", Zip = 98101 },
-                        new { ID = 4, Address = "2000000 Trust Fund St", City = "Medina", HotelName = "Inheritance Inn", State = "WA", Zip = 98039 },
-                        new { ID = 5, Address = "1 Shadow of the Space Needle", City = "Seattle", HotelName = "Object Instance Class Inn", State = "WA", Zip = 98101 }
+                        new { ID = 1, Address = "2901 3rd Ave #300", City = "Seattle", HotelName = "Async Inn", State = "WA", Zip = 98121 }
                     );
                 });
 
@@ -127,15 +117,6 @@ namespace Async_Inn.Migrations
                     b.HasIndex("RoomAmenityAmenitiesID", "RoomAmenityRoomID");
 
                     b.ToTable("Rooms");
-
-                    b.HasData(
-                        new { ID = 1, Layout = 2, Name = "The Million Dollar View" },
-                        new { ID = 2, Layout = 1, Name = "Freddie's Dreamspace" },
-                        new { ID = 3, Layout = 1, Name = "Mesopotamia Suite" },
-                        new { ID = 4, Layout = 0, Name = "The Four OOPs" },
-                        new { ID = 5, Layout = 2, Name = "All Property Behaviors" },
-                        new { ID = 6, Layout = 1, Name = "Seattle Skyline" }
-                    );
                 });
 
             modelBuilder.Entity("Async_Inn.Models.RoomAmenity", b =>
@@ -151,9 +132,9 @@ namespace Async_Inn.Migrations
 
             modelBuilder.Entity("Async_Inn.Models.Amenity", b =>
                 {
-                    b.HasOne("Async_Inn.Models.RoomAmenity", "RoomAmenity")
+                    b.HasOne("Async_Inn.Models.RoomAmenity", "RoomAmenities")
                         .WithMany("Amenities")
-                        .HasForeignKey("RoomAmenityAmenitiesID", "RoomAmenityRoomID");
+                        .HasForeignKey("RoomAmenitiesAmenitiesID", "RoomAmenitiesRoomID");
                 });
 
             modelBuilder.Entity("Async_Inn.Models.HotelRoom", b =>
