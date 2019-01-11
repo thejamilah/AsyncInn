@@ -1,7 +1,7 @@
-# .NET C# Educational Assignment - The Async Inn
+# .NET Core C# Intro to Entity Framework
 
-## Intro to Entity Framework
-This is an educational assignment that focuses on Intro to Entity Framework by building a database for a sample problem domain of a hotel.</br>
+## Learning Objectives
+Intro to Entity Framework by building a database for a sample problem domain of a hotel.</br>
 
 #### Entity Framework
 You can read more about Entity Framework on MSDOCS below </br>
